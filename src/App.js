@@ -4,7 +4,7 @@ import NotesList from './components/NotesList';
 import Search from './components/Search';
 import Header from './components/Header';
 
-const App = () => {
+function App() {
 	const [notes, setNotes] = useState([]);
 	const [searchText, setSearchText] = useState('');
 	const [darkMode, setDarkMode] = useState(false);
