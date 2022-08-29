@@ -5,7 +5,7 @@ function AddNote({handleAddNote}) {
     const [noteText, setNoteText] = useState("");
     {/*here I have fixed the note input limit with 300 characters , but you can change this
     limit*/}
-    const characterLimit = 200;
+    const characterLimit = 400;
  {/*this function is defined for the onChange event of out adding note input*/}
     const handleChange = (e) => {
          {/*with typing the character limit will change with the input text's length*/}
@@ -28,7 +28,7 @@ function AddNote({handleAddNote}) {
   return (
     <div className='note new'>
          {/*the text area for our input*/}
-        <textarea rows="8" cols="10" value={noteText} placeholder='Type to add a note...' onChange={handleChange}></textarea>
+        <textarea rows="12" cols="14" value={noteText} placeholder='Type to add a note...' onChange={handleChange}></textarea>
         <div className='note-footer'>
             <small>{characterLimit - noteText.length} remaining</small>
             <button className='save' onClick={handleSaveClick}>Save</button>
