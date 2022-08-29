@@ -6,16 +6,12 @@ import Header from './components/Header';
 
 const App = () => {
 	
-	{/*this are the states for notes*/}
 	const [notes, setNotes] = useState([]);
 
-	{/*this are the states for searching text*/}
 	const [searchText, setSearchText] = useState('');
 	
-	{/*this are the states for toggle mode*/}
 	const [darkMode, setDarkMode] = useState(false);
 
-	{/*to store or save the data in local storage even after closing the tab*/}
 	useEffect(() => {
 		const savedNotes = JSON.parse(
 			localStorage.getItem('react-notes-app-data')
@@ -26,7 +22,6 @@ const App = () => {
 		}
 	}, []);
 
-	{/*this is for saving the app data in local storage*/}
 	useEffect(() => {
 		localStorage.setItem(
 			'react-notes-app-data',
@@ -34,7 +29,7 @@ const App = () => {
 		);
 	}, [notes]);
 
-	{/*this function is for adding new note*/}
+
 	const addNote = (text) => {
 		const date = new Date();
 		const newNote = {
@@ -46,7 +41,7 @@ const App = () => {
 		setNotes(newNotes);
 	};
 
-	{/*this function is for deleting notes in note app with a id*/}
+
 	const deleteNote = (id) => {
 		const newNotes = notes.filter((note) => note.id !== id);
 		setNotes(newNotes);
